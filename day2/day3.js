@@ -3,7 +3,7 @@ const result = (celcius) => {
   return Farenhait;
 };
 console.log("hasil fahrenheit", result(60));
-
+// ================================================
 const checkNumber = (params) => {
   if (params % 2 === 0) {
     return "even number";
@@ -12,7 +12,7 @@ const checkNumber = (params) => {
   }
 };
 console.log(checkNumber(7));
-
+// =====================================================
 function isPrime(number) {
   if (number < 2) {
     return false;
@@ -26,13 +26,13 @@ function isPrime(number) {
 }
 
 // Contoh penggunaan
-const number = 13;
+const number = 2;
 if (isPrime(number)) {
   console.log(`${number} adalah angka utama`);
 } else {
   console.log(`${number} bukan angka utama`);
 }
-
+// ======================================================
 const findSum = (num) => {
   let count = 0;
   for (let i = 1; i <= num; i++) {
@@ -42,7 +42,7 @@ const findSum = (num) => {
   return count;
 };
 console.log(findSum(5));
-
+// ==========================================================
 const faktorial = (num) => {
   let kali = 1;
   for (let i = 6; i > num; i--) {
@@ -51,26 +51,37 @@ const faktorial = (num) => {
   }
   return kali;
 };
-console.log(faktorial(0));
+// console.log(faktorial(0));
+// // ============================================================
+// function fibonacci(n) {
+//   const fibSeq = [0, 1]; // Inisialisasi urutan dengan dua angka pertama
 
-function printFibonacciNumbers(N) {
-  let number1 = 0;
-  let number2 = 1;
+//   for (let i = 2; i < n; i++) {
+//     const nextNum = fibSeq[i - 1] + fibSeq[i - 2];
+//     fibSeq.push(nextNum);
+//   }
 
-  //   console.log(number1); // Print the first Fibonacci number
+//   return fibSeq[n - 1]; // Mengembalikan angka ke-N dalam urutan Fibonacci
+// }
 
-  if (N > 1) {
-    console.log(number2); // Print the second Fibonacci number
+// // Menampilkan angka pertama N dalam urutan Fibonacci dengan N = 15
+// const n = 15;
+// const fibonacciNumber = fibonacci(n);
+// console.log(
+//   `Angka pertama ${n} dalam urutan Fibonacci adalah: ${fibonacciNumber}`
+// );
 
-    for (let i = 3; i <= N; i++) {
-      const nextNumber = number1 + number2;
-      console.log(nextNumber); // Print the next Fibonacci number
-      number1 = number2;
-      number2 = nextNumber;
-    }
+function fibonacciSequence(n) {
+  const fibSeq = [0, 1]; // Initialize sequence with first two numbers
+
+  for (let i = 2; i < n; i++) {
+    const nextNum = fibSeq[i - 1] + fibSeq[i - 2];
+    fibSeq.push(nextNum);
   }
+
+  return fibSeq.slice(0, n).join(", "); // Return the first N Fibonacci numbers
 }
 
-// Example usage
-const N = 15; // Number of Fibonacci numbers to print
-console.log(printFibonacciNumbers(N));
+const n = 15;
+const fibonacciNumbers = fibonacciSequence(n);
+console.log(`The first ${n} Fibonacci numbers are: ${fibonacciNumbers}`);
