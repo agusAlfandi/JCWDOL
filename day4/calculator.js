@@ -15,3 +15,4 @@ const Cal = (params1, params2, firtur) => {
 console.log(Cal(1, 2, "+"));
 console.log(Cal(1, 2, "-"));
 console.log(Cal(1, 2, "/"));
+console.log(Cal(1, 2, "*"));
