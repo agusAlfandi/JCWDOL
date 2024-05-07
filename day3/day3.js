@@ -25,7 +25,6 @@ function isPrime(number) {
   return true;
 }
 
-// Contoh penggunaan
 const number = 2;
 if (isPrime(number)) {
   console.log(`${number} adalah angka utama`);
