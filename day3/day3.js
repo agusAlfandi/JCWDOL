@@ -37,7 +37,6 @@ const findSum = (num) => {
   let count = 0;
   for (let i = 1; i <= num; i++) {
     count += i;
-    // console.log(i);
   }
   return count;
 };
@@ -47,7 +46,6 @@ const faktorial = (num) => {
   let kali = 1;
   for (let i = 6; i > num; i--) {
     kali *= i;
-    // console.log(i);
   }
   return kali;
 };
@@ -55,7 +53,6 @@ console.log(faktorial(0));
 // ============================================================
 const fibonacci = (num) => {
   let fib = [0, 1];
-  //          0, 1, 1, 2
   for (let i = 2; i <= num; i++) {
     let fibSum = (fib[i] = fib[i - 2] + fib[i - 1]);
     console.log(fib[i]);
