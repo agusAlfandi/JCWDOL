@@ -1,10 +1,23 @@
-const res = prompt("1. Apple \n2. Banana\n3. Melon ");
-if (res == "1") {
-  alert("Apple = Rp.1000");
-} else if (res == "2") {
-  alert("Banana = Rp.2000 ");
-} else if (res == "3") {
-  alert("Melon = Rp.3000");
+const productName = ["Apple", "Banana", "Melon"];
+const Price = [10000, 20000, 30000];
+
+let printProduct = "";
+const resProduct = productName.forEach((item, index) => {
+  printProduct += `${index + 1}. ${item} \n`;
+});
+
+const selectedProduct = Number(prompt(printProduct));
+
+if (
+  selectedProduct <= 0 ||
+  selectedProduct > productName.length ||
+  isNaN(selectedProduct)
+) {
+  alert("Product is no found");
 } else {
-  alert("Produk kosong");
+  alert(
+    `${productName[selectedProduct - 1]} = Rp.${Price[
+      selectedProduct - 1
+    ].toLocaleString("id-ID")}`
+  );
 }

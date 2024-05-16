@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class user {
+        name;
+        username;
+        email;
+        constructor(name, username, email) {
+          this.name = name;
+          this.username = username;
+          this.email = email;
+        }
+      }
+
+      const data = [];
+      let menu;
+
+      do {
+        menu = prompt(`1. show data\n2. insert data\n3. exit `);
+
+        if (menu === "1") {
+          let alertMessage = "Data:\n";
+          data.forEach((item) => {
+            (alertMessage += `Nama: ${item.name}\n`),
+              (alertMessage += `Username: ${item.username}\n`),
+              (alertMessage += `Email: ${item.email}\n\n`);
+          });
+          alert(alertMessage);
+        } else if (menu === "2") {
+          let name = prompt("masukan nama");
+          let username = prompt("masukan username");
+          let email = prompt("masukan email");
+
+          let errorMessage = "";
+          if (!name) {
+            errorMessage += "nama harus diisi. ";
+          }
+
+          if (!username) {
+            errorMessage += "username harus diisi. ";
+          }
+
+          if (!email.includes("@") && !email.includes(".")) {
+            errorMessage += "data email invalid . ";
+          }
+
+          if (data.some((item) => item.email === email)) {
+            errorMessage += "email sudah ada. ";
+          }
+
+          if (!errorMessage) {
+            const dataUser = new user(name, username, email);
+            data.push(dataUser);
+          } else {
+            alert(errorMessage);
+          }
+        }
+      } while (menu !== "3");
+    </script>
+  </body>
+</html>

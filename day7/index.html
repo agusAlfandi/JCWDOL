@@ -1,0 +1,29 @@
+<script>
+  const product = [
+    { name: "Apple", price: 10000 },
+    { name: "Banana", price: 20000 },
+    { name: "Melon", price: 30000 },
+  ];
+
+  let resArr = "";
+
+  product.map((item, index) => {
+    resArr += `${index + 1}. ${item.name} \n`;
+  });
+
+  const selectProduct = Number(prompt(resArr));
+
+  if (
+    selectProduct <= 0 ||
+    selectProduct > [product.length] ||
+    isNaN(selectProduct)
+  ) {
+    alert("Product not found");
+  } else {
+    alert(
+      `${product[selectProduct - 1].name} = Rp.${product[
+        selectProduct - 1
+      ].price.toLocaleString("id-ID")}`
+    );
+  }
+</script>
